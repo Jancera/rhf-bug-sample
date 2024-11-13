@@ -41,9 +41,13 @@ function App() {
     setStep(step - 1);
   };
 
+  const handleSubmit = (data: unknown) => {
+    console.log(data);
+  };
+
   return (
     <div>
-      <form onSubmit={(d) => console.log(d)}>
+      <form onSubmit={form.handleSubmit(handleSubmit)}>
         <FormProvider {...form}>
           {step === 0 ? <StepOne /> : <StepTwo />}
         </FormProvider>
